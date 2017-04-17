@@ -3,3 +3,9 @@
 <%= render 'form', product: @product %>
 
 <%= link_to 'Back', products_path %>
+
+# GET /products/new
+def new
+  @product = Product.new
+end
+
