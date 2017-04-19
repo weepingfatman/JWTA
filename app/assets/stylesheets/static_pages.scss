@@ -11,8 +11,32 @@ body{
     position: relative;
     border: 0;
     margin-bottom: 100px;
-    background-color: color;
 }
+
+.nav navbar-nav li{
+  font-size: 25px;
+}
+
+#carousel-example-generic {
+    width: 100%; 
+    margin: auto;
+}
+
+.carousel-inner > .item > img, 
+.carousel-inner > .item > a > img{
+width: 70%; 
+margin: auto;
+}
+
+.carousel-caption {
+  font-size: 50px;
+  color: #4286f4
+}
+
+.carousel-indicators {
+  bottom:-25px;
+}
+
 
 footer {
   position: fixed;
