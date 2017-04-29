@@ -1,44 +1,55 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Year:</strong>
-  <%= @product.year %>
-</p>
+<div class="container image">
+  <div class="row">
+    <div class="col-sm-8 col-lg-7">        
 
-<p>
-  <strong>Make:</strong>
-  <%= @product.make %>
-</p>
+        <p class="thumbnail">
+      
+        <%= image_tag @product.image_url unless @product.image_url.nil? %>
+        </p>
+    </div>
 
-<p>
-  <strong>Model:</strong>
-  <%= @product.model %>
-</p>
+<div class=" col-sm-2 col-lg-4">
 
-<p>
-  <strong>Miles:</strong>
-  <%= @product.miles %>
-</p>
+  <p>
+    <strong>Year:</strong><%= @product.year %>
+  </p>
 
-<p>
-  <strong>Color:</strong>
-  <%= @product.color %>
-</p>
+  <p>
+    <strong>Make:</strong><%= @product.make %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+  <p>
+    <strong>Model:</strong><%= @product.model %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+  <p>
+    <strong>Miles:</strong><%= @product.miles %>
+  </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
+  <p>
+    <strong>Color:</strong><%= @product.color %>
+  </p>
+
+  <p>
+    <strong>Price:</strong><%= @product.price %>
+  </p>
+
+  <p>
+    <strong>Description:</strong><%= @product.description %>
+  </p>
+
+  <p>
+    <strong>Average Rating:</strong> <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+            
+</div>
+
+
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+
+
+
+
