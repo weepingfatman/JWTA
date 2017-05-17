@@ -2,20 +2,12 @@ body{
 	background-image: url("crossword.png")
 }
 
-.navbar-brand{
-  left:0;
-  top:0;
-}
 
 .navbar {
-    position: relative;
     border: 0;
-    margin-bottom: 100px;
+    padding-bottom: 75px;
 }
 
-.nav navbar-nav li{
-  font-size: 25px;
-}
 
 #carousel-example-generic {
     width: 100%; 
@@ -38,6 +30,7 @@ margin: auto;
   bottom:-25px;
 }
 
+
 .panel-body p {
   font-size: 50px;
   line-height: 50px;
@@ -51,6 +44,13 @@ footer {
   right: 0;
   bottom: 0;
   left: 0;
+  padding-bottom: 5px;
+  padding-left: 5px
+}
+
+footer #login {
+  float: right;
+  padding-right: 10px;
 }
 
 

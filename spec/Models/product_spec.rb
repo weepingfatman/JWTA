@@ -11,6 +11,9 @@ describe Product do
     expect(@product.average_rating).to eq (3)
   end  
 
+
+  end
+
 end
 
 

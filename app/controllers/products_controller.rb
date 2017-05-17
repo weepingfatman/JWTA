@@ -1,12 +1,15 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
+ 
+
 
   # GET /products
   # GET /products.json
   def index
     if params[:q]
       search_term = params[:q]
-      @products = Product.where("year LIKE ?", "%#{search_term}%")
+      @products = Product.search(search_term)
     else
       @products = Product.all
     end

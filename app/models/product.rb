@@ -2,14 +2,13 @@ class Product < ApplicationRecord
   has_many :orders
   has_many :comments
   
-  validates :body, presence: true
-  validates :user, presence: true
-  validates :product, presence: true
-  validates :rating, numericality: { only_integer: true }
+  validates :year, presence: true
+  validates :make, presence: true
+  validates :model, presence: true
+  validates :price, numericality: true
+  validates :description, presence: true
+  validates :image_url, format: { with: %r{.(jpg|png)\Z}i, message: 'must be a URL for JPG or PNG image.' }
 
-  def self.search(search_term)
-    Product.where("year LIKE ?", "%#{search_term}%")
-  end 
 
   def highest_rating_comment
     comments.rating_desc.first

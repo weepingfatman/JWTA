@@ -1,24 +1,24 @@
-<h2>Featured Products:</h2>
-
-
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <% @products.each do |product| %>
-    <div class="item<%= " active" if product == @products.first %>">
-      <%= image_tag(product.image_url) %>
-      <div class="carousel-caption">
-        <%= product.year %> <%= product.make %> <%= product.model %>
+      <div class="item<%= " active " if product == @products.first %>">
+        <%=image_tag(product.image_url) %>
+          <div class="carousel-caption">
+            <%=product.year %>
+              <%=product.make %>
+                <%=product.model %>
+          </div>
       </div>
-    </div>
-    <% end %>
+      <% end %>
   </div>
 
   <!-- Controls -->
