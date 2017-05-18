@@ -2,13 +2,8 @@ class Product < ApplicationRecord
   has_many :orders
   has_many :comments
   
-  validates :year, presence: true
-  validates :make, presence: true
-  validates :model, presence: true
-  validates :color, presence: true
-  validates :price, numericality: true
-  validates :description, presence: true
-  validates :image_url, format: { with: %r{.(jpg|png)\Z}i, message: 'must be a URL for JPG or PNG image.' }
+  validates :year, :make, :model, presence: true
+
 
 
   def highest_rating_comment
