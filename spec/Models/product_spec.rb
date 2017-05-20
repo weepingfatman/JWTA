@@ -1,3 +1,4 @@
+
 require 'rails_helper'
 
 describe Product do
@@ -15,9 +16,6 @@ describe Product do
   end
 
   it "is not valid" do
-    expect(Product.new(description: "Nice SUV")).not_to be_valid
+    expect(Product.new(description: "Nice bike")).not_to be_valid
   end
  end
-
-
-
