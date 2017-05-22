@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   
   def index
     @orders = Order.all
+    byebug
   end
 
   def show
