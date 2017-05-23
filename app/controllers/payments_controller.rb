@@ -6,7 +6,7 @@ class PaymentsController < ApplicationController
     # Create charge on Stripe's servers to charge the user's card
     begin
       charge = Stripe::Charge.create(
-        amount: (@product.price * 100), # Amount in cents
+        amount: (@product.price * 100), 
         currency: 'usd',
         description: params[:stripeEmail],
         receipt_email: @user.email,
@@ -25,3 +25,4 @@ class PaymentsController < ApplicationController
     end
     redirect_to product_path(@product), notice: 'Purchase complete. Thank you!'
   end
+end  

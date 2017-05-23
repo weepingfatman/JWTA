@@ -1,26 +1,23 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
- 
-
 
   # GET /products
   # GET /products.json
   def index
     if params[:q]
       search_term = params[:q]
+      logger.debug "search term : #{search_term}"
       @products = Product.search(search_term)
+      #return the filtered list here
     else
-      @products = Product.
-      byebug
+    @products = Product.all
     end
   end
-
 
   # GET /products/1
   # GET /products/1.json
   def show
-    @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], per_page: 2)
+    @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
   end
 
   # GET /products/new
@@ -81,5 +78,5 @@ class ProductsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:year, :make, :model, :miles, :color, :price, :description, :image_url)
-    end
+    end 
 end
