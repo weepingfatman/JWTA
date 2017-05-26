@@ -1,9 +1,11 @@
-<p id="notice"><%= notice %></p>
+<% if notice != nil %>
+ 	<br>
+ 	<div class="alert alert-info" id="notice" role="alert"><%= notice %></div>
+ <% end %>
 
 <h1>Search Autos</h1>
 
-
-<div class="container-fluid">
+<div class="row">
   <%= render @products %>
 </div>
 

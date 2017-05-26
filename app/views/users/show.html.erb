@@ -1,4 +1,8 @@
-<p id="notice" class="alert alert-warning" role="alert"><%= notice %></p>
+<% if notice != nil %>
+ 	<br>
+ 	<div class="alert alert-info" id="notice" role="alert"><%= notice %></div>
+ <% end %>
+
 
 <p>
   <strong>First name:</strong>

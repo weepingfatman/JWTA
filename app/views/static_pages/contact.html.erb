@@ -10,13 +10,17 @@
 
 <h2>Contact Us Directly</h2>
 
-<%= flash[:notice] %>
+ <% if flash[:notice] %>
+     <br>
+     <div class="alert alert-info" id="notice" role="alert"><%= flash[:notice] %></div>
+   <% end %>
 
 <%= form_tag("/static_pages/thank_you") do %>
+    <div class="col-sm-2 col-lg-4">
       <div class="form-group">
         <%= label_tag :name %>
         <%= text_field_tag :name, nil, class: "form-control", required:"required",placeholder: "Enter Name" %>
-      </div>      
+      </div>
       <div class="form-group">
         <%= label_tag :email, "Email Address" %>
         <%= text_field_tag :email, nil, class: "form-control", required:"required", type:"email", placeholder: "Enter Email" %>
@@ -25,7 +29,7 @@
         <%= label_tag :message %>
         <%= text_area_tag :message, nil, class: "form-control", required:"required", placeholder: "Enter Message" %>
       </div>  
-      <%= submit_tag "Send", class: "btn btn-default" %>     
-
+      <%= submit_tag "Send", class: "btn btn-primary send-button" %>  
+    </div>
   <% end %>
 </div>

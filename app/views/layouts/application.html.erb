@@ -43,10 +43,14 @@
             <%=link_to "Contact", static_pages_contact_path %>
           </li>
         </ul>
-        <%=form_tag( "/products", method: "get", class: "navbar-form navbar-right") do %>
-          <%=text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search for...' %>
-            <%=submit_tag "Search", class: 'btn btn-default' %>
-        <% end %>
+         <div class="form-group-sm">
+          <%=form_tag( "/products", method: "get", class: "navbar-form navbar-right") do %>
+            <%= text_field_tag(:q, nil,  class: "form-control search-box", placeholder: "Search...") %>
+            <%= button_tag(type: "submit", class: "btn btn-primary search-button") do %>
+              <span class="glyphicon glyphicon-search"></span>
+            <% end %>
+          <% end %>
+        </div>  
       </div>
     </div>  
   </nav>
