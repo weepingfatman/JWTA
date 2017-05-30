@@ -4,24 +4,26 @@
   <% end %>
   
 <div class="container product">
-  <div class="col-sm-8 col-lg-7">
-    <%= image_tag(@product.image_url, width: "650",  class:"img-zoom", data_zoom_image: @product.image_url) %>   
-  </div>
-  <div class="col-sm-2 col-lg-4">
-    <% cache @product do %>
-      <p><strong>Year:</strong><%= @product.year %></p>
-      <p><strong>Make:</strong><%= @product.make %></p>
-      <p><strong>Model:</strong><%= @product.model %></p>
-      <p><strong>Miles:</strong><%= @product.miles %></p>
-      <p><strong>Color:</strong><%= @product.color %></p>
-      <p><strong>Price:</strong><%= @product.price %></p>
-      <p><strong>Description:</strong><%= @product.description %></p>
-      <p><strong>Average Rating:</strong> <div class="rated" data-score="<%= @product.average_rating %>"></div></p>
-      <p><%= form_tag "/payments/create" do %>
-        <%= render partial: "Shared/stripe_checkout_button" %>
-        <% end %>
-      </p>
-    <% end %>
+  <div class="row" data-product-id="<%= @product.id %>">
+    <div class="col-sm-8 col-lg-7">
+      <%= image_tag(@product.image_url, width: "650",  class:"img-zoom", data_zoom_image: @product.image_url) %>   
+    </div>
+    <div class="col-sm-2 col-lg-3">
+      <% cache @product do %>
+        <p><strong>Year:</strong><%= @product.year %></p>
+        <p><strong>Make:</strong><%= @product.make %></p>
+        <p><strong>Model:</strong><%= @product.model %></p>
+        <p><strong>Miles:</strong><%= @product.miles %></p>
+        <p><strong>Color:</strong><%= @product.color %></p>
+        <p><strong>Price:</strong><%= @product.price %></p>
+        <p><strong>Description:</strong><%= @product.description %></p>
+        <p><strong>Average Rating:</strong> <div class="rated" data-score="<%= @product.average_rating %>"></div></p>
+        <p><%= form_tag "/payments/create" do %>
+          <%= render partial: "Shared/stripe_checkout_button" %>
+          <% end %>
+        </p>
+      <% end %>
+    </div>  
   </div>
 
   <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
