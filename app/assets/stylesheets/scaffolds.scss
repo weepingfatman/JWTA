@@ -1,17 +1,36 @@
 body {
   background-color: #fff;
   color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  font-family: helvetica, sans-serif;
+  font-size: 15px;
   line-height: 18px;
   margin: 33px;
+  padding-top: 200px;
+}
+
+ .rated {
+   padding-left: 40px;
+ }
+
+ .Payment {
+   padding-left: 40px;
+ }
+
+.rating {
+  padding-bottom: 10px;
+}
+
+.nav navbar-nav {
+  font-size: 100px;
 }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-  margin: 33px;
+  font-family: helvetica, sans-serif;
+  font-size: 25px;
+  font-color: #ffff;
+  line-height: 25px;
+  margin: 40px;
+
 }
 
 pre {
