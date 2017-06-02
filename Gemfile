@@ -74,7 +74,7 @@ gem 'stripe'
 
 gem "brakeman", :require => false
 
-gem 'redis-rails'
+gem 'redis-rails', '~> 5'
 
 gem 'newrelic_rpm'
 
