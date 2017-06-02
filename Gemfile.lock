@@ -234,7 +234,7 @@ DEPENDENCIES
   puma (~> 3.0)
   rails (~> 5.0.1)
   rails-controller-testing
-  redis-rails (~> 5)
+  redis-rails
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
   spring
@@ -248,4 +248,4 @@ DEPENDENCIES
   will_paginate (~> 3.1.0)
 
 BUNDLED WITH
-   1.14.6
+   1.15.0
