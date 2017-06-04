@@ -76,6 +76,8 @@ gem "brakeman", :require => false
 
 gem 'redis-rails'
 
+gem 'redis-store', '~> 1.3.0'
+
 gem 'newrelic_rpm'
 
 
