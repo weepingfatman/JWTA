@@ -80,7 +80,6 @@ gem 'redis-store', '~> 1.3.0'
 
 gem 'newrelic_rpm'
 
-gem 'dalli'
 
 
 
