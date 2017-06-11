@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20170611024026) do
     t.string   "make"
     t.string   "model"
     t.string   "miles"
-    t.string   "cost"
     t.text     "description"
     t.string   "image_url"
     t.datetime "created_at",  null: false
