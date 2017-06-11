@@ -43,9 +43,9 @@
             <%=link_to "Contact", static_pages_contact_path %>
           </li>
         </ul>
-         <div class="form-group-sm">
+         <div class="form-group-md">
           <%=form_tag( "/products", method: "get", class: "navbar-form navbar-right") do %>
-            <%= text_field_tag(:q, nil,  class: "form-control search-box", placeholder: "Search...") %>
+            <%= text_field_tag(:q, nil, class: "form-control search-box", placeholder: "Search...") %>
             <%= button_tag(type: "submit", class: "btn btn-primary search-button") do %>
               <span class="glyphicon glyphicon-search"></span>
             <% end %>

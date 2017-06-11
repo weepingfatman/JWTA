@@ -1,7 +1,7 @@
 <% cache product do %>  
   <div class="col-xs-6 col-md-4">
     <%= image_tag(product.image_url, class: "img-responsive") unless product.image_url.blank? %>
-    <h3><%= product.year%> <%= product.make %> <%= product.model %></h3>
+    <h3><%= product.stock%><%= product.year%> <%= product.make %> <%= product.model %></h3>
     <h4><%= product.description %></h4>
     <h2><%= product.price %></h2>
     <%= link_to 'Show', product, class: "btn btn-link" %>
