@@ -6,7 +6,7 @@
 <div class="container product">
   <div class="row" data-product-id="<%= @product.id %>">
     <div class="col-sm-8 col-lg-7">
-      <%= image_tag(@product.image_url, width: "650",  class:"img-zoom", data_zoom_image: @product.image_url) %>   
+      <%= image_tag(@product.image_url, width: "650",  class:'img-responsive img-zoom', data_zoom_image: @product.image_url) %>   
     </div>
     <div class="col-sm-2 col-lg-3">
       <% cache @product do %>
@@ -16,7 +16,7 @@
         <p><strong>Model:</strong><%= @product.model %></p>
         <p><strong>Miles:</strong><%= @product.miles %></p>
         <p><strong>Color:</strong><%= @product.color %></p>
-        <p><strong>Price:</strong><%= @product.price %></p>
+        <p><strong>Price:</strong> $<%= @product.price %></p>
           <div class="Payment"><%= form_tag "/payments/create" do %>
             <%= render partial: "Shared/stripe_checkout_button" %>
             <% end %>
@@ -34,7 +34,9 @@
     <% if signed_in? %>
     <%= render 'new_comment' %>
     <% end %>
-
+  </div> 
+   
+  <div class="col-sm-2 col-lg-10">  
     <%= render 'comments' %>
     <%= will_paginate @comments %>
   </div>

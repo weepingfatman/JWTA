@@ -1,23 +1,36 @@
 body{
 	background-image: url("crossword.png");
-  padding-top: 200px;
+  margin: 5px;
+  padding-top: 150px;
+  padding-left: 10px;
 }
 
 
-  .navbar {
-    background-image: url("diamond plate.jpg");
-    background-size: cover;
-    margin-bottom: 75px;
-    z-index: 9999;
-    border: 0;
-    font-size: 50px;
-    line-height: 1.42857143 !important;
-    letter-spacing: 3px;
-    border-radius: 0;
-    font-family: helvetica, sans-serif;
-    padding-bottom: 50px;
+.navbar {
+  background-image: url("diamond plate.jpg");
+  background-size: cover;
+  margin-bottom: 50px;
+  z-index: 9999;
+  border: 0;
+  font-size: 30px;
+  line-height: 1.42857143 !important;
+  letter-spacing: 3px;
+  border-radius: 0;
+  font-family: helvetica, sans-serif;
+  padding-bottom: 40px;
 }
 
+.navbar-brand>img {
+  height: 70px;
+}
+
+.navbar-nav li {
+  margin-top: 25px;
+}
+
+.navbar-form{
+  margin-top: 25px;
+}  
 
 #carousel-example-generic {
     width: 100%; 
