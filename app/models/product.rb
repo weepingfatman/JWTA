@@ -4,6 +4,10 @@ class Product < ApplicationRecord
   
   validates :year, :make, :model, presence: true
 
+  def self.search(search_term)
+    Product.where("name ilike ?", "%#{search_term}%")
+  end
+
   def highest_rating_comment
     comments.rating_desc.first
   end
@@ -16,7 +20,4 @@ class Product < ApplicationRecord
     comments.average(:rating).to_f
   end
   
-  def self.search(search_term)
-   Product.where("year LIKE ?", "%#{search_term}%")
-  end
 end
