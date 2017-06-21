@@ -74,6 +74,8 @@ gem 'stripe'
 
 gem "brakeman", :require => false
 
+gem 'redis'
+
 gem 'redis-rails'
 
 gem 'dalli'

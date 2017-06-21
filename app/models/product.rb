@@ -5,7 +5,11 @@ class Product < ApplicationRecord
   validates :year, :make, :model, presence: true
 
   def self.search(search_term)
-    Product.where("name ilike ?", "%#{search_term}%")
+    if Rails.env.development?
+      Product.where("name LIKE ?", "%#{search_term}%")
+    else
+      Product.where("name ilike ?", "%#{search_term}%")
+    end
   end
 
   def highest_rating_comment
@@ -19,5 +23,11 @@ class Product < ApplicationRecord
   def average_rating
     comments.average(:rating).to_f
   end
-  
+
+  def views
+    $redis.get("product:#{id}")
+  end
+  def viewed!
+    $redis.incby("product:#{id}")
+  end
 end
