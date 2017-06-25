@@ -1,11 +1,10 @@
 <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-amount="<%= @product.price * 100 %>"
-    data-name= "Quality Used Vehicles"
-    data-description="<%= @product.description %>"
-    data-image="<%= @product.image_url %>"
-    data-locale="auto">
-  </script>
-
-<%= hidden_field_tag(:product_id, @product.id) %>
+  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+  data-image="<%= @product.image_url %>"
+  data-name= "Quality Used Vehicles"
+  data-description="<%= @product.description %>"
+  data-amount="<%= @product.price * 100 %>"
+  data-locale="auto">
+  <%= hidden_field_tag(:product_id, @product.id) %>
+</script>
