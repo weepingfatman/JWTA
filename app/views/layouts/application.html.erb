@@ -63,7 +63,6 @@
   <%=yield %>
 
     <footer>
-      &copy; Weepys Web Development 2017
       <div id="login">
         <%if user_signed_in? %>
           <%=link_to( 'Logout', destroy_user_session_path, :method=> :delete) %>
@@ -73,6 +72,7 @@
                 <span class="glyphicon glyphicon-log-in"></span>
                 <% end %>
       </div>
+      &copy; Weepys Web Development 2017
     </footer>
 </body>
 
