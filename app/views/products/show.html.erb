@@ -1,10 +1,10 @@
 
 <div class="container product">
-  <div class="row" data-product-id="<%= @product.id %>">
+  <div class="row">
     <div class="col-sm-8 col-lg-7">
       <%= image_tag(@product.image_url, width: "650",  class:'img-responsive img-zoom', data_zoom_image: @product.image_url) %>   
     </div>
-    <div class="col-sm-2 col-lg-3">
+    <div class="col-sm-2 col-lg-3" data-product-id="<%= @product.id %>">
       <% cache @product do %>
         <p><strong>Stock:</strong><%= @product.stock %></p>
         <p><strong>Year:</strong><%= @product.year %></p>
@@ -14,7 +14,7 @@
         <p><strong>Color:</strong><%= @product.color %></p>
         <p><strong>Price:</strong> $<%= @product.price %></p>
           <div class="payment"><%= form_tag "/payments/create" do %>
-              <%= render partial: "shared/stripe_checkout_button" %>
+              <%= render partial: "Shared/stripe_checkout_button" %>
               <% end %>
           </div>
         <p><strong>Description:</strong><%= @product.description %></p>
