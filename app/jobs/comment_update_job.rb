@@ -1,4 +1,3 @@
-
 class CommentUpdateJob < ApplicationJob
   queue_as :default
 

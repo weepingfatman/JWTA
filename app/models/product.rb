@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   has_many :orders
   has_many :comments
   
-  validates :year, :make, :model, presence: true
+  validates :year, :make, :model, :price, presence: true
 
   def self.search(search_term)
     if Rails.env.development?

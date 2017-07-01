@@ -7,7 +7,6 @@ module ApplicationCable
     end
 
     def disconnect
-
     end
 
     protected
@@ -19,5 +18,6 @@ module ApplicationCable
         reject_unauthorized_connection
       end
     end
+
   end
 end
