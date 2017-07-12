@@ -4,14 +4,6 @@ class Product < ApplicationRecord
   
   validates :year, :make, :model, :price, presence: true
 
-  def self.search(search_term)
-    if Rails.env.development?
-      Product.where("make LIKE ?", "%#{search_term}%")
-    else
-      Product.where("make ilike ?", "%#{search_term}%")
-    end
-  end
-
   def highest_rating_comment
     comments.rating_desc.first
   end
